@@ -1,0 +1,107 @@
+<html>
+    <head>
+    <script src="../../includes/html2canvas.min.js"></script>
+    <script src="../../includes/jspdf.min.js"></script>
+    </head>
+    <body>
+        <script>
+
+var material = ['german', 'angeles', 'nicolas', 'alma', 'betiana', 'simon', 'julia', 'pablo', 'jorge', 'carolina', 'fabian'];
+scriptChange
+
+var pdf=new jsPDF('p', 'mm', 'a4', true);
+pdf.setProperties({
+ title:'TITULO DEL DOCUMENTO TEST',
+ subject:'MEMORANDUM',
+ author:'German Bernhardt <german.bernhardt@gmail.com>',
+ keywords:'jarvis',
+ creator:'JARVIS'
+});
+
+pdf.setFont('helvetica');
+
+pdf.roundedRect(5, 5, 82, 36, 3, 3, 'fd');
+pdf.setFontSize(14);
+pdf.setFontType('bold');
+pdf.text(35, 10, 'JARVIS I.A.');
+pdf.setFontSize(8);
+pdf.setFontType('normal');
+pdf.text(7, 20, 'MARTIN GARCIA 620 - B° SAN MARTIN');
+pdf.text(7, 23, '5008 CORDOBA - ARGENTINA - Tel./Fax: +54 351 4719571');
+pdf.text(7, 26, 'Email: ljuarez@keblarcba.com.ar http://www.keblarcba.com.ar');
+pdf.setFontType('bold');
+pdf.text(25, 32, 'IVA RESPONSABLE INSCRITO');
+
+pdf.roundedRect(90, 5, 115, 36, 3, 3, 'fd');
+pdf.setFontSize(8);
+
+pdf.text(92, 10, 'PROYECTO: ');
+pdf.text(92, 13, 'CLIENTE: ');
+
+pdf.roundedRect(5, 42, 200, 16, 3, 3, 'fd');
+pdf.text(7, 46, 'DESCRIPCION: ');
+
+pdf.roundedRect(5, 60, 98, 28, 3, 3, 'fd');
+pdf.text(7, 64, 'CONTACTO #1');
+pdf.line(5, 65, 95, 65);
+pdf.text(7, 69, 'xxx');
+pdf.text(7, 73, 'Tel #1: ');
+pdf.text(7, 77, 'Tel #2: ');
+pdf.text(7, 81, 'Tel #3: ');
+pdf.text(7, 85, 'Email: ');
+
+pdf.roundedRect(107, 60, 98, 28, 3, 3, 'fd');
+pdf.text(109, 64, 'CONTACTO #2');
+pdf.line(107, 65, 197, 65);
+pdf.text(109, 69, 'xxx');
+pdf.text(109, 73, 'Tel #1: ');
+pdf.text(109, 77, 'Tel #2: ');
+pdf.text(109, 81, 'Tel #3: ');
+pdf.text(109, 85, 'Email: ');
+
+var page = 0;
+for(let i = 0; i < material.length; i++){
+    if(page == 0) {
+        pdf.addPage('a4', 'landscape');
+
+        pdf.setFontType('bold');
+        pdf.roundedRect(5, 5, 287, 8, 2, 2, 'fd');
+        pdf.text(7, 10, 'MATERIALES');
+
+        pdf.roundedRect(5, 15, 287, 190, 2, 2, 'fd');
+        pdf.text(7, 20, 'COD.');
+        pdf.text(30, 20, 'DESCRIPCION');
+
+        pdf.text(205, 20, 'PRESUPUESTO');
+        pdf.text(230, 20, 'ENTREGADO');
+        pdf.text(250, 20, 'PENDIENTE');
+        pdf.text(270, 20, 'DEVUELTO');
+
+        pdf.setFontType('normal');
+    }
+
+    if(page == 0)
+        h = 24;
+    else h += 4;
+
+    pdf.text(7, h, material[i]);
+    pdf.text(30, h, material[i]);
+
+    pdf.text(205, h, material[i]);
+    pdf.text(230, h, material[i]);
+    pdf.text(250, h, material[i]);
+    pdf.text(270, h, material[i]);
+
+    if(page == 45)
+        page = 0;
+    else page++;
+}
+
+logo=new Image();
+logo.src = 'logo.png';
+pdf.addImage(logo, 'PNG', 20, 56, 60, 10);
+
+pdf.save('documento.pdf');
+        </script>
+    </body>
+</html>

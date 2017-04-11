@@ -1,0 +1,1 @@
+exports.german = function(){console.log(wapi)};
