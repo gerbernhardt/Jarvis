@@ -46,7 +46,7 @@ module.exports = {
         wapi.sendkeys('{enter}'); //ok
         // oppener window!
         wapi.sendkeys('{tab}');
-        wapi.sendkeys('23012130');
+        wapi.sendkeys('xxxx');
         wapi.sendkeys('{enter}');
         wapi.sleep(5);
         wapi.sendkeys('{enter}'); //ok
