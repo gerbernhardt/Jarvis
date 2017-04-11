@@ -25,3 +25,6 @@ Reparto Organización Sobre Apellido y Nombres Fecha Marcación Entrada Salida Hor
 105 7883 545 Vergamo, Tramo Adolfo 26/02/2015 14:00 19:00 05:00 No Justificado 
 105 7883 545 Vergamo, Tramo Adolfo 27/02/2015 14:00 19:00 05:00 No Justificado 
 105 7883 545 Vergamo, Tramo Adolfo 28/02/2015 06:43 08:05 01:22 No Justificado 
+
+
+
